@@ -1,0 +1,30 @@
+// colors
+$primary-color-red: #D0092E;
+$primary-color-blue: #47A7FF;
+$light-blue: #319CFF;
+
+//navbar
+$navbar-height: 90px;
+$footer-height: 90px;
+$footer-height-small: 130px;
+$footer-height-x-small: 140px;
+$header-height: 450px;
+
+//media-screen
+$x-large-screen: 1399px;
+$large-screen: 1199px;
+$medium-screen: 991px;
+$small-screen: 767px;
+$x-small-screen: 575px;
+
+//font
+$main-font: "Roboto";
+
+//min screen
+$min-screen: 300px;
+
+
+//boostrap
+//in case of small content change these values to higher one
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);

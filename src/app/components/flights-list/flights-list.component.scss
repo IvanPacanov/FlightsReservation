@@ -1,0 +1,56 @@
+@import "/src/styles/variables.scss";
+
+.body {
+  max-width: 446px;
+  height: max-content;
+  padding: 14px;
+
+  .title {
+    width: 100%;
+  }
+}
+
+.table {
+  width: 100%;
+  box-shadow: none;
+
+  tr:nth-child(even) {
+    background: #ffffff;
+  }
+
+  tr:nth-child(odd) {
+    background: #f8f8f8;
+  }
+}
+
+.place-div {
+  justify-content: center;
+  display: flex;
+}
+
+.img-arrow {
+  margin-inline: 11px;
+}
+
+.mat-card-actions {
+  margin-bottom: 0px !important;
+  display: flex;
+  justify-content: center;
+
+  .show-button {
+    background: white;
+    color: $light-blue;
+    height: 36px;
+    margin-bottom: 16px;
+    border-radius: 0 !important;
+  }
+}
+
+.button-action {
+  width: 80px;
+}
+
+.demo-row-is-clicked .mat-cell {
+  color: #47A7FF !important;
+  background: rgba(71, 167, 255, 0.2) !important;
+}

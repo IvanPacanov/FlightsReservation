@@ -1,0 +1,24 @@
+@import "/src/styles/variables.scss";
+
+.content{
+  margin-top: $footer-height;
+  background:#F8F8F8;
+  height: 100%;
+
+  @media (max-width: $small-screen) {
+    margin-top: $footer-height-small;
+  }
+
+  @media (max-width: $x-small-screen) {
+    margin-top: $footer-height-x-small;
+  }
+}
+.spa-content {
+  min-width: $min-screen;
+    .content {
+      min-height: calc(100vh - #{$navbar-height} - #{$footer-height});
+    }
+    .footer{
+      bottom: 0;
+    }
+}

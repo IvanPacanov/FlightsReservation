@@ -1,0 +1,150 @@
+<mat-card class="body">
+  <mat-card-header>
+    <mat-card-title class="title">
+      {{'ReservationFlight.Title' | translate}}</mat-card-title>
+    <span class="fill-remaining-space"></span>
+    <div *ngIf="isSelectedPlace()">
+      <span class="span-text">{{this.flightReservation.get("departPlace")?.value}}</span>
+      <img class="img-arrow"
+           src="/assets/icon/arrow-left-right.svg">
+      <span class="span-text">{{this.flightReservation.get("arrivePlace")?.value}}</span>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="reservation-form"
+          [formGroup]="flightReservation">
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.FirstName' | translate}}</p>
+        <mat-form-field>
+          <input matInput
+                 [placeholder]="'ReservationFlight.Inside.FirstName' | translate"
+                 formControlName="firstname"
+                 type="text">
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <span class="fill-space"></span>
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.SecondName' | translate}}</p>
+        <mat-form-field>
+          <input matInput
+                 [placeholder]="'ReservationFlight.Inside.SecondName' | translate"
+                 formControlName="lastname"
+                 type="text">
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.NumberPeople' | translate}}</p>
+        <mat-form-field>
+          <input matInput
+                 type="number"
+                 [placeholder]="'ReservationFlight.Inside.NumberPeople' | translate"
+                 formControlName="numberPeople">
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <span class="fill-space"></span>
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.Class' | translate}}</p>
+        <mat-form-field>
+          <mat-select formControlName="class"
+                      placeholder="Wybierz klasę">
+            <mat-option value="businnes">{{'ReservationFlight.ClassType.Business' | translate}}</mat-option>
+            <mat-option value="economy">{{'ReservationFlight.ClassType.Economy' | translate}}</mat-option>
+          </mat-select>
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.DepartTime' | translate}}</p>
+        <mat-form-field>
+          <input matInput
+                 [matDatepicker]="dp"
+                 placeholder="Wybierz datę"
+                 formControlName="departTime">
+          <mat-datepicker-toggle matSuffix
+                                 [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <span class="fill-space"></span>
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.ArriveDate' | translate}}</p>
+        <mat-form-field>
+          <input matInput
+                 [matDatepicker]="dp2"
+                 placeholder="Wybierz datę"
+                 formControlName="arriveDate">
+          <mat-datepicker-toggle matSuffix
+                                 [for]="dp2"></mat-datepicker-toggle>
+          <mat-datepicker #dp2></mat-datepicker>
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.DepartPlace' | translate}}</p>
+        <mat-form-field>
+          <mat-select formControlName="departPlace"
+                      placeholder="Wybierz miejsce">
+            <mat-option></mat-option>
+            <mat-option [value]="place.code"
+                        *ngFor="let place of places">{{place.text}} ({{place.code}})</mat-option>
+          </mat-select>
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <span class="fill-space"></span>
+
+
+      <div class="div-field">
+        <p class="title-text">{{'ReservationFlight.ArrivePlace' | translate}}</p>
+        <mat-form-field>
+          <mat-select formControlName="arrivePlace"
+                      placeholder="Wybierz miejsce">
+            <mat-option></mat-option>
+            <mat-option [value]="place.code"
+                        *ngFor="let place of places">{{place.text}} ({{place.code}})</mat-option>
+
+          </mat-select>
+          <mat-error>
+            <p>{{'ReservationFlight.Error' | translate}}</p>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button class="confirm-button"
+            mat-button
+            [disabled]="!flightReservation.valid"
+            (click)="addFlight()">
+      {{'ReservationFlight.AddToBusket' | translate}}
+    </button>
+  </mat-card-actions>
+</mat-card>

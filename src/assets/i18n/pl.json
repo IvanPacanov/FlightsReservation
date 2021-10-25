@@ -1,0 +1,50 @@
+{
+  "Footer": {
+    "CompanyInformation": "Company Information",
+    "Message": "Message",
+    "CompanyProfile": "Company Profile",
+    "Group": "Group",
+    "Vision": "Our Corporate Vision~MatterportDemo's Way",
+    "History": "History",
+    "Business": "Business",
+    "ContactUs": "contact us",
+    "TermsOfUse": "Website Terms of Use",
+    "PrivacyPolicy": "Privacy Policy"
+  },
+  "Navbar": {
+    "Flights": "Loty",
+    "Reservation": "Rezerwacja"
+  },
+  "ReservationFlight": {
+    "Title": "Rezerwacja lotu",
+    "FirstName": " Imię",
+    "SecondName": "Nazwisko",
+    "NumberPeople": "Ilość osób",
+    "Class": "Klasa",
+    "DepartTime": "Data i godzina wylotu",
+    "ArriveDate": "Data i godzina przylotu",
+    "DepartPlace": "Miejsce wylotu",
+    "ArrivePlace": "Miejsce przylotu",
+    "Add": "Dodaj do koszyka",
+    "Error": "To pole jest wymagane",
+    "AddToBusket": "Dodaj do koszyka",
+    "Inside": {
+      "FirstName": "Wpisz Imię",
+      "SecondName": "Wpisz Nazwisko",
+      "NumberPeople": "Wybierz ilość osób",
+      "Class": "Klasa",
+      "DepartTime": "Data i godzina wylotu",
+      "ArriveDate": "Data i godzina przylotu",
+      "DepartPlace": "Miejsce wylotu",
+      "ArrivePlace": "Miejsce przylotu"
+    },
+    "ClassType": {
+      "Business": "business",
+      "Economy": "economy"
+    }
+  },
+  "ListOfFlight": {
+    "Title": "Lista lotów",
+    "LoadMore": "Załaduj więcej"
+  }
+}

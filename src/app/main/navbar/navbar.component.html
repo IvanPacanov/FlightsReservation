@@ -1,0 +1,49 @@
+<mat-toolbar class="navbar">
+
+  <mat-toolbar-row class="bottom-row">
+    <div class="container">
+      <div class="nav-section">
+        <nav class="left-button">
+          <app-button-nav>
+            <p>{{'Navbar.Flights' | translate}}</p>
+          </app-button-nav>
+        </nav>
+        <nav class="left-button">
+          <app-button-nav>
+            <p>{{'Navbar.Reservation' | translate}}</p>
+          </app-button-nav>
+        </nav>
+        <span class="fill-remaining-space"></span>
+
+        <div class="nav-bar-menu">
+          <app-button-nav class="shop-button">
+            <div class="info-div"
+                 *ngIf="countOfFlight>0 && countOfFlight<10">
+              {{countOfFlight}}
+            </div>
+            <div class="info"
+                 *ngIf="countOfFlight>0 && countOfFlight>9">
+              9+
+            </div>
+            <img class="img-shop"
+                 src="/assets/icon/shopping_cart_outline.svg">
+          </app-button-nav>
+
+          <app-button-nav class="profile-button">
+            <span class="text-span">JAN KOWALSKI</span>
+            <img src="/assets/icon/account-circle-outline.svg">
+          </app-button-nav>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-template #loginButton>
+  <button [disableRipple]="true"
+          class="menu-btn-logout"
+          mat-button>
+    <mat-icon inline="true">account_circle</mat-icon>
+    <span class="text-btn">{{'Navbar.Login' | translate}}</span>
+  </button>
+</ng-template>

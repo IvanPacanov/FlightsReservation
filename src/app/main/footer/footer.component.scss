@@ -1,0 +1,30 @@
+@import "/src/styles/variables.scss";
+
+.footer-container {
+  height: $footer-height;
+  display: grid;
+  background-color: $primary-color-blue;
+
+  @media (max-width: $x-small-screen) {
+
+    .mat-toolbar-row,
+    .mat-toolbar-single-row {
+      height: 175px;
+    }
+  }
+}
+
+.footer-copyright {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  p{
+    margin: 0;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14.06px;
+  }
+}
