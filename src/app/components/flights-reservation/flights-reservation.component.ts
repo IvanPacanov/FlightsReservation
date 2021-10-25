@@ -44,9 +44,9 @@ export class FlightsReservationComponent implements OnInit, OnDestroy {
     this.selectingDefaultFlightService.currentSelectedFlight.pipe(
       takeUntil(this.destroySubject$)).subscribe(data => {
         this.flightReservation.reset();
-        this.flightReservation.patchValue({ departTime: data.data});
-        this.flightReservation.patchValue({ departPlace: AIR_PORTS.find(a => a.code === data.place.departure)?.code });
-        this.flightReservation.patchValue({ arrivePlace: AIR_PORTS.find(a => a.code === data.place.arrival)?.code });
+        this.flightReservation.patchValue({ departTime: data.data });
+        this.flightReservation.patchValue({ departPlace: data.place.departure });
+        this.flightReservation.patchValue({ arrivePlace: data.place.arrival });
       });
   }
 
