@@ -6,11 +6,11 @@
   height: 100%;
 
   @media (max-width: $small-screen) {
-    margin-top: $footer-height-small;
+    margin-top: $navbar-height-small;
   }
 
   @media (max-width: $x-small-screen) {
-    margin-top: $footer-height-x-small;
+    margin-top: $navbar-height-x-small;
   }
 }
 .spa-content {

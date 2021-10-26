@@ -6,6 +6,8 @@ $light-blue: #319CFF;
 //navbar
 $navbar-height: 90px;
 $footer-height: 90px;
+$navbar-height-x-small: 220px;
+$navbar-height-small: 130px;
 $footer-height-small: 130px;
 $footer-height-x-small: 140px;
 $header-height: 450px;
@@ -16,15 +18,23 @@ $large-screen: 1199px;
 $medium-screen: 991px;
 $small-screen: 767px;
 $x-small-screen: 575px;
+$xx-small-screen: 365px;
 
 //font
 $main-font: "Roboto";
 
+//mat-card
+$max-width: 450px;
+
 //min screen
 $min-screen: 300px;
+
+//table
+$white: #ffffff;
+$no-white-table: #f8f8f8;
 
 
 //boostrap
 //in case of small content change these values to higher one
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+$container-max-widths: (xs: 350, sm: 540px, md: 720px, lg: 960px, xl: 1140px);
 $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);

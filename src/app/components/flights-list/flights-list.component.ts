@@ -1,36 +1,34 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { AIR_PORTS, Flight } from 'src/app/model/air-ports-model';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AIR_PORTS, Flight } from 'src/app/model/flight-model';
 import { FlightsService } from 'src/app/services/flights.service';
 import { SelectingDefaultFlightService } from 'src/app/services/selecting-default-flight.service';
-
 
 const ELEMENT_DATA2: Flight[] = [
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'WAW')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'LUB')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'LUB')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'WAW')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'LUB')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'OSL')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'OSL')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'WAW')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'LUB')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'OSL')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'OSL')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'WAW')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'LUB')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'OSL')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'OSL')!.code}, data: {arrive: new Date(), depart: new Date()}},
   {place: {
     departure: AIR_PORTS.find(port => port.code === 'WAW')!.code,
-    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: new Date()},
+    arrival: AIR_PORTS.find(port => port.code === 'HAM')!.code}, data: {arrive: new Date(), depart: new Date()}},
 ];
 
 @Component({
@@ -38,12 +36,11 @@ const ELEMENT_DATA2: Flight[] = [
   templateUrl: './flights-list.component.html',
   styleUrls: ['./flights-list.component.scss']
 })
-export class FlightsListComponent implements OnInit, OnDestroy {
+export class FlightsListComponent implements OnInit {
 
-  displayedColumns: string[] = ['place', 'data', 'button'];
+  public displayedColumns: string[] = ['place', 'data', 'button'];
+  public clickedRows: Flight;
   public dataSource = ELEMENT_DATA2;
-  clickedRows: Flight;
-  destroySubject$ = new Subject<void>();
   public $data: Observable<Flight[]>;
 
   constructor(
@@ -51,19 +48,11 @@ export class FlightsListComponent implements OnInit, OnDestroy {
     private flightsService: FlightsService)  { }
 
   ngOnInit(): void {
-    this.$data =  this.flightsService.getFlights().pipe(
-      takeUntil(this.destroySubject$));
+    this.$data =  this.flightsService.getFlights();
   }
-
-  ngOnDestroy(): void {
-    this.destroySubject$.next();
-    this.destroySubject$.complete();
-  }
-
 
   selecte(value: Flight): void{
     this.clickedRows = value;
     this.selectingDefaultFlightService.selectFlight(value);
   }
-
 }

@@ -1,5 +1,6 @@
 
 @import "bootstrap-4-grid/scss/grid/bootstrap-grid";
+@import "/src/styles/variables.scss";
 
 *{
   margin: 0;
@@ -7,4 +8,44 @@
 
 .full-width-input {
   width: 100%;
+}
+
+
+
+::ng-deep .mat-form-field {
+  font-size: 12px;
+}
+
+::ng-deep .mat-form-field-outline-start,
+::ng-deep .mat-form-field-outline-end {
+  border-radius: 0 !important;
+  border-width: 2px !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: $primary-color-blue !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+  padding: 0 !important;
+  margin-top: 2px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.3em 0 0 0 !important;
+  height: 36px;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: red !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: red !important;
+  opacity: 0.8 !important;
+}
+
+::ng-deep .mat-form-field-invalid .mat-input-element,
+.mat-warn .mat-input-element {
+  caret-color: red !important;
 }

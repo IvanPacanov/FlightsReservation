@@ -25,6 +25,8 @@ mat-toolbar {
   .fill-remaining-space {
     flex: none !important;
   }
+
+
 }
 
 .fill-remaining-space {
@@ -68,9 +70,10 @@ mat-toolbar {
     }
   }
 
+
   @media (max-width: $x-small-screen) {
 
-    height: $footer-height-x-small;
+    height: $navbar-height-x-small;
     width: 100%;
     display: flex;
     align-items: center;
@@ -81,6 +84,7 @@ mat-toolbar {
       height: 175px;
     }
   }
+
 
   .bottom-row {
     padding: 5px 0 5px 0;

@@ -1,0 +1,24 @@
+<div class="body"
+     *ngIf="$data | async; let data">
+  <mat-card class="mat-card-contenxt"
+            *ngIf="data.length > 0">
+    <mat-card-header>
+      <mat-card-title class="title">
+        {{'ListOfFlight.Title' | translate}}</mat-card-title>
+    </mat-card-header>
+    <div *ngFor="let item of data"
+         class="flightItem-div">
+      <p>{{item.place.arrival}}</p>
+      <img class="img-arrow"
+           src="/assets/icon/arrow-left-right.svg">
+      <p>{{item.place.departure}}</p>
+      <p>{{item.data.arrive| date:'yyyy-MM-dd, hh:mm'}} </p>
+      <p>{{item.data.depart | date:'yyyy-MM-dd, hh:mm'}}</p>
+      <button mat-icon-button
+              (click)="delete(item)"
+              style="float: right">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>

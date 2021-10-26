@@ -1,7 +1,8 @@
 @import "/src/styles/variables.scss";
+@import "/src/styles.scss";
 
 .body {
-  max-width: 446px;
+  max-width: $max-width;
   height: max-content;
   padding: 14px;
 
@@ -41,7 +42,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 21.09px;
-  color: #47A7FF;
+  color: $primary-color-blue;
 }
 
 .mat-labelaa {
@@ -62,46 +63,8 @@
   height: 36px;
 }
 
-::ng-deep .mat-form-field {
-  font-size: 12px;
-}
-
-::ng-deep .mat-form-field-outline-start,
-::ng-deep .mat-form-field-outline-end {
-  border-radius: 0 !important;
-  border-width: 2px !important;
-}
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #47A7FF !important;
-}
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
-  padding: 0 !important;
-  margin-top: 2px;
-}
-
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 1em 0 1em 0;
-}
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-  padding: 0.3em 0 0 0 !important;
-  height: 36px;
-}
-
-::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: red !important;
-}
-
-::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
-  color: red !important;
-  opacity: 0.8 !important;
-}
-
-::ng-deep .mat-form-field-invalid .mat-input-element,
-.mat-warn .mat-input-element {
-  caret-color: red !important;
 }
 
 .mat-card-actions {
@@ -112,14 +75,14 @@
 
 .confirm-button {
   background: $light-blue;
-  color: white;
+  color: $white;
   height: 36px;
   margin-bottom: 16px;
   border-radius: 0 !important;
 }
 
 .confirm-butto :disabled {
-  color: white;
+  color: $white;
 }
 
 .reservation-form {

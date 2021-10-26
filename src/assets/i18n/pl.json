@@ -26,7 +26,9 @@
     "DepartPlace": "Miejsce wylotu",
     "ArrivePlace": "Miejsce przylotu",
     "Add": "Dodaj do koszyka",
-    "Error": "To pole jest wymagane",
+    "Error": {
+      "Required": "To pole jest wymagane!",
+      "Min": "Wartosć nie może być mniejsza niż 1!"},
     "AddToBusket": "Dodaj do koszyka",
     "Inside": {
       "FirstName": "Wpisz Imię",

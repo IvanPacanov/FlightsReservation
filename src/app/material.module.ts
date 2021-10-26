@@ -12,12 +12,13 @@ import {
 } from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 const appearance: MatFormFieldDefaultOptions = {
   appearance: 'outline'
 };
-
 
 const modules = [
   MatCardModule,
@@ -28,8 +29,9 @@ const modules = [
   MatInputModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatTableModule
-
+  MatTableModule,
+  MatMenuModule,
+  MatBadgeModule
 ];
 
 @NgModule({

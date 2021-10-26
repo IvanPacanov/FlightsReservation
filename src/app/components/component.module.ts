@@ -7,6 +7,7 @@ import { MaterialModule } from '../material.module';
 import { FlightsReservationComponent } from './flights-reservation/flights-reservation.component';
 import { HomeComponent } from './home/home.component';
 import { FlightsListComponent } from './flights-list/flights-list.component';
+import { BasketFlightsComponent } from './basket-flights/basket-flights.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { FlightsListComponent } from './flights-list/flights-list.component';
   declarations: [
     FlightsReservationComponent,
     HomeComponent,
-    FlightsListComponent
+    FlightsListComponent,
+    BasketFlightsComponent
   ]
 })
 export class ComponentModule { }

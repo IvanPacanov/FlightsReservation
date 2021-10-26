@@ -24,8 +24,8 @@
       <td mat-cell
           *matCellDef="let element">
 
-        <div class="color-div">
-          {{element.data | date:'yyyy-MM-dd, hh:mm'}}
+        <div class="date-div">
+          {{element.data.arrive | date:'yyyy-MM-dd, hh:mm'}}
         </div>
       </td>
     </ng-container>
@@ -33,8 +33,7 @@
     <ng-container matColumnDef="button">
       <td mat-cell
           *matCellDef="let element">
-        <button mat-icon-button
-                style="float: right">
+        <button mat-icon-button>
           <img class="img-arrow"
                src="/assets/icon/arrow-right-circle-black.svg">
         </button>

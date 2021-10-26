@@ -4,29 +4,24 @@
     <div class="container">
       <div class="nav-section">
         <nav class="left-button">
-          <app-button-nav>
+          <app-button-nav
+          [routerLink]="['/']">
             <p>{{'Navbar.Flights' | translate}}</p>
           </app-button-nav>
         </nav>
         <nav class="left-button">
-          <app-button-nav>
+          <app-button-nav
+          [routerLink]="['/']">
             <p>{{'Navbar.Reservation' | translate}}</p>
           </app-button-nav>
         </nav>
         <span class="fill-remaining-space"></span>
 
         <div class="nav-bar-menu">
-          <app-button-nav class="shop-button">
-            <div class="info-div"
-                 *ngIf="countOfFlight>0 && countOfFlight<10">
-              {{countOfFlight}}
-            </div>
-            <div class="info"
-                 *ngIf="countOfFlight>0 && countOfFlight>9">
-              9+
-            </div>
-            <img class="img-shop"
-                 src="/assets/icon/shopping_cart_outline.svg">
+          <app-button-nav class="shop-button"
+          [routerLink]="['/basket-flights']">
+            <mat-icon [matBadge]="countOfFlight$ | async ">shopping_cart</mat-icon>
+
           </app-button-nav>
 
           <app-button-nav class="profile-button">

@@ -1,27 +1,31 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Flight } from '../model/air-ports-model';
+import { FlightAdded } from '../model/flight-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfirmFlightService {
 
+  private flightsArray: FlightAdded[] = [];
+
+  private flights = new BehaviorSubject(this.flightsArray);
+  actuallyFlights = this.flights.asObservable();
+
   private countOfFlights = new BehaviorSubject(0);
   currentCountOfFlight = this.countOfFlights.asObservable();
 
-
-  private Flights = new BehaviorSubject<Array<Flight>>([]);
-  currentFlight = this.countOfFlights.asObservable();
-
-  constructor() { }
-
-  addNewFlight(): void {
-    this.countOfFlights.next(this.countOfFlights.value + 1);
+  addNewFlight(flight: FlightAdded): void {
+    this.flightsArray.push(flight);
+    this.flights.next(this.flightsArray);
+    this.countOfFlights.next(this.flightsArray.length);
   }
 
-  addNewFlights(value: number): void {
-    this.countOfFlights.next(this.countOfFlights.value + value);
+  deleteFlight(flight: FlightAdded) {
+    var index = this.flightsArray.findIndex(f => f === flight);
+    this.flightsArray.splice(index, 1);
+    this.flights.next(this.flightsArray);
+    this.countOfFlights.next(this.flightsArray.length);
   }
 
   resetFlight(): void {

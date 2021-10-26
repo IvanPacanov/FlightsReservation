@@ -5,6 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './button-nav.component.html',
   styleUrls: ['./button-nav.component.scss']
 })
-export class ButtonNavComponent{
-
-}
+export class ButtonNavComponent{}

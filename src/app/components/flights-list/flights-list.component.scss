@@ -1,7 +1,7 @@
 @import "/src/styles/variables.scss";
 
 .body {
-  max-width: 446px;
+  max-width: $max-width;
   height: max-content;
   padding: 14px;
 
@@ -15,11 +15,11 @@
   box-shadow: none;
 
   tr:nth-child(even) {
-    background: #ffffff;
+    background: $white;
   }
 
   tr:nth-child(odd) {
-    background: #f8f8f8;
+    background: $no-white-table;
   }
 }
 
@@ -38,7 +38,7 @@
   justify-content: center;
 
   .show-button {
-    background: white;
+    background: $white;
     color: $light-blue;
     height: 36px;
     margin-bottom: 16px;
@@ -51,6 +51,10 @@
 }
 
 .demo-row-is-clicked .mat-cell {
-  color: #47A7FF !important;
+  color: $primary-color-blue !important;
   background: rgba(71, 167, 255, 0.2) !important;
+}
+
+.date-div{
+  margin-inline: 15px;
 }
