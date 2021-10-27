@@ -20,7 +20,8 @@
         <div class="nav-bar-menu">
           <app-button-nav class="shop-button"
           [routerLink]="['/basket-flights']">
-            <mat-icon [matBadge]="countOfFlight$ | async ">shopping_cart</mat-icon>
+            <mat-icon *ngIf="(countOfFlight$ | async)! !== 0" [matBadge]="countOfFlight$ | async ">shopping_cart</mat-icon>
+            <mat-icon *ngIf="(countOfFlight$ | async)! === 0">shopping_cart</mat-icon>
 
           </app-button-nav>
 
